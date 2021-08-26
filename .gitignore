@@ -30,6 +30,10 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+lib/ 
+include/
+Scripts/
+
 
 # Installer logs
 pip-log.txt
@@ -115,9 +119,13 @@ dmypy.json
 
 #CodeSnap
 /CodeSnap
+/code_snap
 
-#Csv FIles
+#Data Files
+data/
 *.csv
+*.parquet.gzip
+*.ong
 
 #logs
 *.log

@@ -1,0 +1,15 @@
+Description: Create a Kinesis Data Stream shard to stream crypto data
+
+Parameters: 
+  pNameStream: 
+    Description: KStream Name
+    Type: String
+    Default: CryptoStreamData
+
+Resources:
+  rKinesisStream: 
+      Type: AWS::Kinesis::Stream 
+      Properties: 
+        Name: !Ref pNameStream
+        RetentionPeriodHours: 24 
+        ShardCount: 1

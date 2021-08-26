@@ -1,0 +1,53 @@
+SHOW TABLES;
+
+CREATE OR REPLACE TABLE binanceapibd.bin_tbl_crypto_raw(
+	tcr_record_id                            BIGINT       NOT NULL AUTO_INCREMENT,
+	tcr_symbol_name                          VARCHAR(100) NOT NULL,
+	tcr_status                               VARCHAR(50 ) NOT NULL,
+    tcr_baseAsset                            VARCHAR(50 ) NOT NULL,
+    tcr_baseAssetPrecision                   INT          NOT NULL,
+    tcr_quoteAsset                           VARCHAR(50 ) NOT NULL,
+    tcr_quotePrecision                       INT          NOT NULL,
+    tcr_quoteAssetPrecision                  INT          NOT NULL,
+    tcr_baseCommissionPrecision              INT          NOT NULL,
+    tcr_quoteCommissionPrecision             INT          NOT NULL,
+    tcr_icebergAllowed                       BOOLEAN      NOT NULL,
+    tcr_ocoAllowed                           BOOLEAN      NOT NULL,
+    tcr_quoteOrderQtyMarketAllowed           BOOLEAN      NOT NULL,
+    tcr_isSpotTradingAllowed                 BOOLEAN      NOT NULL,
+    tcr_isMarginTradingAllowed               BOOLEAN      NOT NULL,
+    tcr_requestDate                          DATE         NOT NULL,
+    tcr_price                                FLOAT      NOT NULL,
+    tcr_bidPrice_x                           FLOAT      NOT NULL,
+    tcr_bidQty_x                             FLOAT      NOT NULL,
+    tcr_askPrice_x                           FLOAT      NOT NULL,
+    tcr_askQty_x                             FLOAT      NOT NULL,
+    tcr_priceChange                          FLOAT      NOT NULL,
+    tcr_priceChangePercent                   FLOAT      NOT NULL,
+    tcr_weightedAvgPrice                     FLOAT      NOT NULL,
+    tcr_prevClosePrice                       FLOAT      NOT NULL,
+    tcr_lastPrice                            FLOAT      NOT NULL,
+    tcr_lastQty                              FLOAT      NOT NULL,
+    tcr_bidPrice_y                           FLOAT      NOT NULL,
+    tcr_bidQty_y                             FLOAT      NOT NULL,
+    tcr_askPrice_y                           FLOAT      NOT NULL,
+    tcr_askQty_y                             FLOAT      NOT NULL,
+    tcr_openPrice                            FLOAT      NOT NULL,
+    tcr_highPrice                            FLOAT      NOT NULL,
+    tcr_lowPrice                             FLOAT               NOT NULL,
+    tcr_volume                               FLOAT               NOT NULL,
+    tcr_quoteVolume                          FLOAT      NOT NULL,
+    tcr_openTime                             FLOAT              NOT NULL,
+    tcr_closeTime                            FLOAT              NOT NULL,
+    tcr_firstId                              FLOAT      NOT NULL,
+    tcr_lastId                               FLOAT      NOT NULL,
+    tcr_count                                FLOAT       NOT NULL,
+    tcr_procces_id                           VARCHAR(100) NOT NULL,
+    tcr_process_date                         DATETIME     DEFAULT CURRENT_TIMESTAMP,  
+    tcr_update_date                          DATETIME     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (tcr_record_id)
+);
+
+CREATE INDEX bin_idx_tcr_symbol_name ON binanceapibd.bin_tbl_crypto_raw (tcr_symbol_name);
+
+SHOW WARNINGS;
